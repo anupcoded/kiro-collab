@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "aws-docs": {
+      "command": "C:\\Program Files\\uv\\uvx.exe",
+      "args": [
+        "--from",
+        "awslabs.aws-documentation-mcp-server@latest",
+        "awslabs.aws-documentation-mcp-server.exe"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false
+    }
+  },
+  "powers": {
+    "mcpServers": {
+      "power-aws-infrastructure-as-code-awslabs.aws-iac-mcp-server": {
+        "command": "uvx",
+        "args": [
+          "awslabs.aws-iac-mcp-server@latest"
+        ],
+        "env": {
+          "AWS_PROFILE": "your-named-profile",
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "disabled": false
+      }
+    }
+  }
+}

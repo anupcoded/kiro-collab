@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "TSX Comment Reviewer",
+  "description": "When a TSX file is saved, inspects the file for comment quality. If commenting isn't aligned to best practices, adds appropriate comments directly in the file.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.tsx"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A TSX file was just saved. Inspect the file for its level of commenting. Evaluate whether the comments align with best practices: meaningful comments that explain the \"why\" behind non-obvious logic, documentation for complex components/functions/props, and clarity for intricate logic—while avoiding redundant comments that merely restate what the code does. If the commenting is not aligned with these best practices (too sparse on complex logic, or missing helpful documentation), add appropriate comments directly in the file. Do not add noise or comment obvious code. Preserve all existing functionality and only modify comments."
+  }
+}
